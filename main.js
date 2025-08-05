@@ -27,19 +27,14 @@ function customGrid(number) {
             gridRowID.appendChild(gridColumns);
         };  
     };
+
+
 };
 
 // initialize a default grid
 customGrid(16);
 
-const customBtn = document.querySelector('#customGrid');
-customBtn.addEventListener('click', () =>  {
-    let userGridSize = prompt('Please pick a grid Size: ')
-    customGrid(userGridSize);
-});
-
-
-const cells = document.querySelectorAll('.cells');
+let cells = document.querySelectorAll('.cells');
 
 cells.forEach(cell => {
     cell.addEventListener('mousemove', (e) => {
@@ -54,3 +49,15 @@ clear.addEventListener('click', () => {
     });
 });
 
+const customBtn = document.querySelector('#customGrid');
+customBtn.addEventListener('click', () =>  {
+    let userGridSize = prompt('Please pick a grid Size: ')
+    customGrid(userGridSize);
+    // this updates the querySelectorAll to accept the new amount of 'cells'.  That's why it's here twice. 
+    cells = document.querySelectorAll('.cells');
+    cells.forEach(cell => {
+        cell.addEventListener('mousemove', (e) => {
+            cell.style.backgroundColor = 'black';
+        });
+    })
+});
