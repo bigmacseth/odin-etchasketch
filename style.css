@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+    width: 960px;
+    height: 960px;
+}
+
+button {
+    height: 50px;
+    width: 200px;
+    padding: 1rem;
+    margin-top: 50px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding-top: 50px;
+    flex-grow: 1;
+}
+
+.cells {
+    background-color: white;
+    flex-grow: 1;
+}
+
+body {
+    background-color: darkslategrey;
+}
