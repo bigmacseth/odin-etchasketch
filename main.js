@@ -3,7 +3,6 @@
 // section uses that id to iterate once over each column until it is full of 'cells'.
 
 function customGrid(number) {
-    
 
     const container = document.querySelector('.container');
     container.replaceChildren();
@@ -52,6 +51,15 @@ clear.addEventListener('click', () => {
 const customBtn = document.querySelector('#customGrid');
 customBtn.addEventListener('click', () =>  {
     let userGridSize = prompt('Please pick a grid Size: ')
+
+    if (userGridSize > 100) {
+        alert( 'Please pick a number between 1 and 100!' );
+        userGridSize = 16;
+    } else if (userGridSize <= 0) {
+        alert( 'Please pick a number between 1 and 100!' );
+        userGridSize = 16;
+    };
+    
     customGrid(userGridSize);
     // this updates the querySelectorAll to accept the new amount of 'cells'.  That's why it's here twice. 
     cells = document.querySelectorAll('.cells');
